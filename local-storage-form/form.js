@@ -60,13 +60,18 @@ function reset() {
 
 function show() {
   let info = document.getElementById('info');
-  info.innerHTML += `
-  <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body text-dark">
-    <h2 class="card-title">${localStorage.getItem('Name')}</h2>
-    <h5 class="card-title">${localStorage.getItem('E-mail')}</h5>
-    <p class="card-text">${localStorage.getItem('Message')}</p>
-  </div>
-  `
+  // info.innerHTML += `
+  // <div class="card border-dark mb-3" style="max-width: 18rem;">
+  // <div class="card-header">Header</div>
+  // <div class="card-body text-dark">
+  //   <h2 class="card-title">${localStorage.getItem('Name')}</h2>
+  //   <h5 class="card-title">${localStorage.getItem('E-mail')}</h5>
+  //   <p class="card-text">${localStorage.getItem('Message')}</p>
+  // </div>
+  // `
+  document.getElementById('myName').innerText = localStorage.getItem('Name')
+  
+  document.getElementById('myEmail').innerText = localStorage.getItem('E-mail')
+  
+  document.getElementById('myMessage').innerText = localStorage.getItem('Message')
 }
