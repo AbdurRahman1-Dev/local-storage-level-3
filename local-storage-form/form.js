@@ -3,6 +3,7 @@
 function getInputValue(inputId) {
   let input = document.getElementById(inputId);
   let inputValue = input.value;
+  document.getElementById(inputId).value = ""
   return inputValue;
 }
 
@@ -31,6 +32,20 @@ function remove(id, name) {
 }
 
 
+function SendALL() {
+  let name = getInputValue("name");
+  let email= getInputValue("email");
+  let message= getInputValue("message");
+
+  let person = {
+    name: name,
+    Email: email,
+    message: message
+  }
+
+  localStorage.setItem("person", JSON.stringify(person))
+  
+}
 // set name
 send("addName","name", "Name")
 
@@ -75,3 +90,12 @@ function show() {
   
   document.getElementById('myMessage').innerText = localStorage.getItem('Message')
 }
+
+
+
+
+
+
+
+
+
